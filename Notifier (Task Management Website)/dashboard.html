@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>
+        Notifier Dashboard
+    </title>
+    </head>
+<body>
+<link rel="stylesheet" href="dashboard.css">
+<meta charset="utf-8">
+
+<div class="topnav" id="myTopnav">
+  <a href="#home" class="active"><img src="notifiericon.png" width="16px" height="16px">
+      NOTIFIER</a>
+  <a href="errorfile.html">Contacts</a>
+  <a href="errorfile.html">Archive</a>
+    <div class="topnava">
+        <a href="errorfile.html"><img src="profile.png" width=17px height=17px></a>
+        <a href="errorfile.html"><img src="bell.png" width=17px height=17px></a>
+        <a href="errorfile.html"><img src="calendar.png" width=17px height=17px></a>
+        <a href="login.html"><img src="logoff2.png" width=17px height=17px></a>
+    </div>
+</div>
+<div class="emailsemuaa">
+<div id="myDIV" class="header">
+    <p>Tasks To Do </p>
+  <input type="text" id="myInput" placeholder="Add Tasks...">
+  <span onclick="newElement()" class="addBtn">Add</span>
+</div>
+    
+<ul id="myUL">
+    <li> Email Promotion Poster to Jason</li>
+</ul>
+    <div class="emailcompose">
+        <div class="composetop">
+        <img src="compose.png" width="17px" height="17px"> COMPOSE
+        </div>
+        <div class="selectcontact">
+        <a href="errorfile.html">
+        <img src="addcontact.png" width="17px" height="17px">
+            Add Contacts
+            </a>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+  
+        </div>
+        <form class="emailform" action="#send" target="_self" method="post">
+        <div class="emailsubject">
+        <input class="subject" type="text" name="subject" placeholder="Subject">
+        <span class="subjectinput" data-placeholder="Subject"></span>
+            </div>
+            <textarea class="message" name="messageemail" placeholder="Write Message Here"></textarea>
+            <span class="subjectinput" data-placeholder="Write Text Here"></span>
+            <a href="errorfile.html">
+            <img src="clip.png" width="14px" height="20px" class="bottomimages"></a>
+            <a href="errorfile.html">
+            <img src="image.png" width="26px" height="20px" class="bottomimages"></a>
+            <a href="errorfile.html">
+            <img src="delete.png" width="20px" height="20px" class="bottomimages"></a>
+            <button class="contact2-form-btn">
+								Send
+							</button>
+            </form>
+
+        </div>
+    </div>
+<br>
+    
+<div class="drafts">
+<div class="topdraft">
+    DRAFTS
+    </div>
+<div class="draftcontent">
+<ol>
+<li>
+    <a href="errorfile.html"> Promotion Poster
+    </a>
+    </li> 
+<li>
+    <a href="errorfile.html"> Meeting Reminders 07/03/2020
+    </a>
+    </li> 
+</ol> 
+</div>
+</div>
+<script language="JavaScript">
+// Create a "close" button and append it to each list item
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("Please input a task");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+    
+    
+   
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="login.css">
+<head>
+    <title>
+    Notifier
+    </title>
+    </head>
+<body>
+<div class="topnav" id="myTopnav">
+ <a href="login.html" class="active"><img src="notifiericon.png" width="21px" height="21px"> NOTIFIER</a>
+</div>
+    
+<style>
+body {
+  background-image: url('cde93558f603d6bbf288ff0ffe775463.jpg');
+}
+</style>
+ <div class="image">
+    <img src=notifiericon.png class="notifiericon">
+    </div>
+<div class="text">
+<h1> Broadcast, Everywhere</h1>
+<h3> Notifier enables you to notify anyone, <br>
+    anywhere and anytime you needed </h3>
+</div>
+   
+
+
+<div class="login">
+<form name="login">
+  <div class="container">
+    <label for="email"><b></b></label>
+    <input type="text" placeholder="Username" name="username" required> <br>
+
+    <label for="psw"><b></b></label>
+    <input type="password" placeholder="Password" name="psw" required> <br>
+      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Keep Me Signed In
+    <div class="clearfix">
+      <button type="submit" class="signupbtn" onclick="check()">Login</button>
+    </div>
+  </div>
+</form>
+
+    
+
+<script language="JavaScript">
+function check ()
+{
+    if (login.username.value == "test" && login.psw.value == "123")
+    {
+       window.open("dashboard.html")
+    }
+    else
+    {
+       alert("Error Password or Username")
+    }
+}
+</script>
+    </div>
+    </body>
+</html>
